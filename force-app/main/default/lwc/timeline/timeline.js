@@ -228,6 +228,7 @@ export default class timeline extends NavigationMixin(LightningElement) {
 
     disconnectedCallback() {
         window.removeEventListener('resize', this.debounce);
+		this.debounce = null;//Data leak improvement
     }
 
     connectedCallback() {
